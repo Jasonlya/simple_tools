@@ -8,7 +8,6 @@ TYPE = 'TYPE'
 PATH = 'PATH'
 VALUE = 'VALUE'
 
-# Borrowed from http://djangosnippets.org/snippets/2247/
 # with some modifications.
 class Diff(object):
   def __init__(self, first, second, with_values=False):
