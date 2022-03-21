@@ -5,7 +5,7 @@ https协议是由SSL+HTTP协议构建的加密传输协议；端口：443
 二、常见的POST提交数据的方式有哪些
 主要有四种方式：四种方式取决于Content-Type这个请求头
 Content-Type：application/x-www.form-urlencoded 特点：数据报文是字典，相当于通过表单方式去提交数据，数据的格式：a=1&b=2&c=3
-Content-Type：multipart/form-data  特点：报文包含又文件上传
+Content-Type：multipart/form-data  特点：报文包含文件上传
 Content-Type：multipart/json（text/plain,text/xml,jsp,html,xml） 特点：报文都是字符串类型
 Content-Type：binary  特点：报文类型是以二进制的方式上传文件
 
