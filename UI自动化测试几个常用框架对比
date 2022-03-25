@@ -1,0 +1,17 @@
+selenium1、webdriver（selenium2）:支持自写代码实现；
+                                 支持多种主流浏览器，包括IE\Firefox\Chrome等；
+                                 支持跨平台；支持多种语言和外部库，python、java、Ruby、c#；
+                                 并且支持主流持续集成工具。
+QTP:支持录制添加；
+    只支持IE\Firefox；
+    Windows；
+    支持Vbscript；
+    不支持持续集成工具。
+selenium插件katalon Automation Recorder：支持录制；
+                                        Firefox\Chrome；
+                                        录制脚本导出为对应语言，包括C#、java、RF等
+RobotFramework：关键字驱动框架；
+                支持多种主流浏览器；
+                都支持；
+                python、java；
+                支持持续集成工具；
