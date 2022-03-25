@@ -4,7 +4,13 @@ pip install selenium
 2.安装浏览器webdriver
 Firfox浏览器驱动____下载地址：https://github.com/mozilla/geckodriver/releases
 Chrome浏览器驱动__下载地址：http://chromedriver.storage.googleapis.com/index.html
-selenium ide____下载地址：https://www.crx4chrome.com/crx/77585/
+下载了解压到文件夹，path中设置环境变量
 问题：selenium.common.exceptions.WebDriverException: Message: unknown Error: cannot find Chrome binary
 解决：https://www.cnblogs.com/yhleng/p/9503819.html
 
+3.安装selenium ide（可以根据录制手动web行为，导出为各种语言的脚本）
+selenium ide____下载地址：https://www.crx4chrome.com/crx/77585/
+下载之后，Chrome“更多工具”--“扩展程序”--开启“开发者模式”--将下载的webdriver直接拖进页面吗，安装即可完成。失败大部分原因是版本不兼容
+
+4.元素定位
+帮助网站：https://www.cnblogs.com/yufeihlf/p/5717291.html
