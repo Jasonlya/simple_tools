@@ -2,6 +2,15 @@ selenium1、webdriver（selenium2）:支持自写代码实现；
                                  支持多种主流浏览器，包括IE\Firefox\Chrome等；
                                  支持跨平台；支持多种语言和外部库，python、java、Ruby、c#；
                                  并且支持主流持续集成工具。
+selenium插件的优势：
+（1）selenium是一款开源的、基于界面的录制工具，在Firefox和Chrome商店中均可下载；
+（2）可以将录制过程导出为对应开发语言，包括C#，java、robotframework等；
+（3）对于新手来说，可以快速入门；对于老手来说可以通过此录制工具提高自动化脚本开发效率；
+selenium插件的不足：
+（1）一些较为复杂的操作导出为java文件可能无法运行，需要人工调试
+（2）无法作为一个成熟的测试框架使用，更多的是用来协助进行元素定位
+（3）工具本身存在局限性，比如知道通过xpath的绝对路径来定位等
+
 QTP:支持录制添加；
     只支持IE\Firefox；
     Windows；
