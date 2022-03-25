@@ -1,1 +1,9 @@
+1.python安装selenium
+pip install selenium
+
+2.安装浏览器webdriver
+Firfox浏览器驱动____下载地址：https://github.com/mozilla/geckodriver/releases
+Chrome浏览器驱动__下载地址：http://chromedriver.storage.googleapis.com/index.html
+问题：selenium.common.exceptions.WebDriverException: Message: unknown Error: cannot find Chrome binary
+解决：https://www.cnblogs.com/yhleng/p/9503819.html
 
