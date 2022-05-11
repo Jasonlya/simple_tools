@@ -73,6 +73,12 @@ NVL(X,VALUE) 如果X为空，返回VALUE
 6、如何建立索引
 create index 索引名 on 表名（列名）
 
+7、索引类型
+普通索引：即一个索引只包含单个列，一个表可以有多个单列索引
+唯一索引：索引列的值必须唯一，但允许有空值
+复合索引：即一个索引包含多个列
+聚簇索引(聚集索引)：并不是一种单独的索引类型，而是一种数据存储方式。具体细节取决于不同的实现，InnoDB的聚簇索引其实就是在同一个结构中保存了B-Tree索引(技术上来说是B+Tree)和数据行。
+
 8、如何只显示重复数据、使用oracle伪列删除表中的重复数据中的一条
 select * fromtable groupby id having count(*)>1
 delete from table t where t.rowid!=(select max(t1.rowid) from table t1 where t.name=t1.name)
