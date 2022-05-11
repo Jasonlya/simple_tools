@@ -3,6 +3,9 @@
 数据操作语言（DML）：insert、delete、update
 数据定义语言（DDL）：create、drop、alter
 数据控制语言（DCL）：grant：把权限赋予用户、revoke：把权限从用户收回
+  授予权限：grant 权限 to 用户名;
+  撤销权限：revoke 权限 from 用户名;
+  授予表操作权限：grant insert/select/update/select/alter on table to name
 事务控制语言（TPL\TCL）:commit、rollback
 
 x、MySQL数据库与Oracle数据库有什么区别
