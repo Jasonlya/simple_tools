@@ -77,11 +77,12 @@ create index 索引名 on 表名（列名）
 select * fromtable groupby id having count(*)>1
 delete from table t where t.rowid!=(select max(t1.rowid) from table t1 where t.name=t1.name)
 
-MYSQL字符串函数各种复习
--- CONCAT(str1, str2)：字符连接函数
--- UPPER(str)：将字符串改为大写字母
--- LOWER(str)：将字符串改为小写字母
--- LENGTH(str)：判定字符串长度
--- SUBSTRING(str, a, b):提取字段中的一段，从字符串str的第a位开始提取，提取b个字符
--- LEFT(str, n)：提取字符串最左边的n个字符
--- RIGHT(str, n)：提取字符串最右边的n个字符
+9、python连接oracle数据库
+引用cx_oracle模块，创建连接，创建游标，执行SQL语句，关闭游标，关闭连接
+import cx_Oracle as cx
+con = cx.connect('root', 'root123', '127.0.0.1:1521/ORCL')
+cursor = con.cursor
+cursor(sql)
+data = cursor.fetchone() 
+cursor.close()
+con.close()
