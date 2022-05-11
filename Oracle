@@ -7,7 +7,9 @@
 
 x、MySQL数据库与Oracle数据库有什么区别
 1.MySQL是中小型应用的数据库，一般用于个人项目或中小型网站及论坛。oracle属于大型数据库，一般在具有相当规模的企业应用
-2.MySQL有自动增长的数据类型。oracle没有自动增长的数据类型，需要建立一个自增序列
+2.MySQL有自动增长的数据类型。oracle没有自动增长的数据类型，需要建立一个自增序列 
+  MySQL：create table( id int(10) auto_increment primary key) auto_increment=1;
+  oracle: create sequence test_sequence increment by 1；   insert ……test_sequence.nextval
 3.group by用法：MySQL中group by在select查询语句中随意使用，但是oracle查询中有组函数，那其他列名必须是组函数处理过的或者是group by子句的列，否则报错
 4.引号方面：MySQL中用双引号包起字符串，oracle中只可以用单引号包起字符串
 
