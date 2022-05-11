@@ -31,16 +31,49 @@ x、内连接,左连接,右连接的区别：
 2、MySQL的分页：select * from stu limit m, n;
 Oracle的分页：select * from (select * from table order by id desc) t where t.rownum =1;
              select * from (select t.*,rownum as no from table t order by id desc) t where no >=1;
+分页语句的步骤：
+a.最内层sql，查询要分页的所有数据
+b.第二层sql，通过rownum伪列确定显示数据的上限，并且给查询的数据添加rownum伪列的值
+c.最外层sql，设置显示数据的下限
+select*from
+(select a.*,rownum r from
+(select*from表名 where条件 orderby列) a
+where rownum<=页数*条数) b where r>（页数-1）*条数
 
-3、 truncate和delete区别：
+
+3、 truncate和delete和drop区别：
+delete from aa 
+truncate table aa 
+a.delete 后面可以接where条件
+b.delete不改变表和索引所占空间的大小。truncate表后，表和索引的大小恢复到所占空间初始大小。drop将表和索引所占用的空间全部释放。
+c.删除速度：drop > truncate > delete
+d.delete和truncate都是删除表中的内容而不能删除表的结构，而drop则是删除表的结构和内容(表将不复存在)。
 
 4、说说Oracle中经常使用到的函数
+a.字符串函数
+ASCII(X)、CONCAT(X,Y)、INSTR(X,STR[,START][,N)、LENGTH(X)、LOWER(X)、UPPER(X)、TRIM('RULE' FROM 'X')、LTRIM（'X','RULE'）、REPLACE(X,old,new)、SUBSTR(X,start,length)
+b.数字函数
+ABS(X)——绝对值  MOD(X,Y)——X除以Y的余数  POWER(X,Y)——X的Y次幂 ROUND(X[,Y])——从Y位截取，四舍五入  SQRT(X)——X的平方根  TRUNC(X[,Y])——从Y位截取，不四舍五入直接截取	
+c.日期函数
+ADD_MONTHS(d,n)  LAST_DAY(d) 
+d.转换函数
+TO_CHAR   SELECT TO_CHAR(SYSDATE,'YYYY"年"MM"月"DD"日" HH24:MI:SS')"date" FROM dua
+TO_DATE   SELECT TO_CHAR(-123123.45,'L9.9EEEEPR')"date" FROM dual;
+TO_NUMBER SELECT TO_NUMBER('-$12,345.67','$99,999.99')"num" FROM dual;
+e.聚合函数
+COUNT、SUM、MIN、MAX、AVG
+f.其他函数
+NVL(X,VALUE) 如果X为空，返回VALUE
 
 5、主键有几种？
+复合型、整数型、字符型
+
+6、如何建立索引
+create index 索引名 on 表名（列名）
 
 8、如何只显示重复数据、使用oracle伪列删除表中的重复数据中的一条
-
-
+select * fromtable groupby id having count(*)>1
+delete from table t where t.rowid!=(select max(t1.rowid) from table t1 where t.name=t1.name)
 
 MYSQL字符串函数各种复习
 -- CONCAT(str1, str2)：字符连接函数
