@@ -246,4 +246,8 @@ with open('文件名字'，'r'，encoding='utf-8') as f:
 with open('文件名字'，'w'，encoding='utf-8') as f：
 f.write('xxx')  
     
+    32、jmeter的各指标代表的含义，我们在用jmeter进行压测的时候比较关注什么指标
+    
+    33、jmeter断言怎么设置
+    
 
