@@ -1,7 +1,46 @@
+##Docker原理
 Docker 是一种开源的容器化平台，它可以帮助开发者快速构建、部署和运行应用程序。Docker 的核心原理是将应用程序及其依赖项打包成一个独立的、可移植的容器，使其能够在任何地方运行，而不需要担心环境配置和依赖项问题。
 Docker 使用了 Linux 内核的一些特性，例如 cgroups、namespace、aufs 等，来实现容器的隔离和资源管理。它将应用程序及其依赖项打包成一个镜像，镜像包含了应用程序所需的所有文件和配置。镜像可以通过 Dockerfile 文件来构建，Dockerfile 文件定义了如何构建镜像、安装依赖项、配置环境等。
 Docker 镜像可以通过 Docker Hub 或者私有仓库来分享和管理。当需要运行应用程序时，可以通过 Docker 引擎来创建容器，容器是基于镜像创建的运行实例，容器包含了应用程序及其依赖项，可以独立运行。容器可以通过 Dockerfile 文件或者 Docker Compose 文件来定义和配置。
-
 Docker 还提供了一些工具和服务来管理容器，例如 Docker Compose、Docker Swarm、Docker Registry 等。Docker Compose 可以用来管理多个容器的部署和运行，Docker Swarm 可以用来管理容器集群，Docker Registry 可以用来管理 Docker 镜像的存储和分享。
-
 总之，Docker 的核心原理是将应用程序及其依赖项打包成一个独立的、可移植的容器，使其能够在任何地方运行，而不需要担心环境配置和依赖项问题。
+
+##Docker Desktop原理
+Docker Desktop 是一种用于在本地计算机上运行 Docker 容器的应用程序。它使用了 Docker 引擎来创建和管理容器，并提供了一个图形用户界面来方便用户进行容器的管理和配置。
+在 Docker Desktop 中，您可以通过 Docker Compose 文件来定义和启动多个容器，这些容器可以相互通信和交互。您可以通过修改 Docker Compose 文件中的配置来修改容器的配置，例如修改容器的端口映射、环境变量等。
+另外，如果您想修改已经运行的容器的配置，可以使用 docker update 命令来更新容器的配置。例如，您可以使用以下命令来修改容器的 CPU 和内存限制：
+docker update --cpus 2 --memory 2g <container_id>
+需要注意的是，修改容器的配置可能会影响容器的运行状态，因此在修改之前请确保您已经备份了容器的数据。
+
+##docker常用命令
+以下是 Docker 常用命令：
+docker run：创建并启动一个新的容器
+docker ps：列出当前正在运行的容器
+docker images：列出本地镜像
+docker pull：从 Docker 镜像仓库中拉取镜像
+docker push：将镜像推送到 Docker 镜像仓库
+docker build：构建 Docker 镜像
+docker stop：停止一个或多个正在运行的容器
+docker start：启动一个或多个已经停止的容器
+docker rm：删除一个或多个容器
+docker rmi：删除一个或多个镜像
+docker exec：在正在运行的容器中执行命令
+docker logs：获取容器的日志信息
+docker inspect：获取容器或镜像的详细信息
+docker network：管理 Docker 网络
+docker volume：管理 Docker 数据卷
+
+##Docker Desktop安装Mysql5.7
+安装 MySQL 5.7 镜像非常简单，只需使用 Docker 命令从 Docker Hub 下载镜像并运行容器即可。以下是具体步骤：
+
+打开终端或命令提示符，并确保已安装 Docker Desktop。
+从 Docker Hub 下载 MySQL 5.7 镜像。在终端或命令提示符中输入以下命令：
+docker pull mysql:5.7
+这将下载 MySQL 5.7 镜像并存储在本地 Docker 仓库中。
+运行 MySQL 5.7 容器。在终端或命令提示符中输入以下命令：
+docker run -p 3306:3306 --name mysql57 -e MYSQL_ROOT_PASSWORD=your_password -d mysql:5.7
+这将在后台运行 MySQL 5.7 容器，并将容器的 3306 端口映射到主机的 3306 端口。请将“your_password”替换为您想要设置的 MySQL root 用户密码。
+确认容器已成功运行。在终端或命令提示符中输入以下命令：
+docker ps
+这将显示当前正在运行的 Docker 容器列表。您应该能够看到名为“mysql57”的容器正在运行。
+现在，您可以使用 MySQL 客户端连接到 MySQL 5.7 容器并开始使用它了。
