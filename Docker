@@ -1,0 +1,7 @@
+Docker 是一种开源的容器化平台，它可以帮助开发者快速构建、部署和运行应用程序。Docker 的核心原理是将应用程序及其依赖项打包成一个独立的、可移植的容器，使其能够在任何地方运行，而不需要担心环境配置和依赖项问题。
+Docker 使用了 Linux 内核的一些特性，例如 cgroups、namespace、aufs 等，来实现容器的隔离和资源管理。它将应用程序及其依赖项打包成一个镜像，镜像包含了应用程序所需的所有文件和配置。镜像可以通过 Dockerfile 文件来构建，Dockerfile 文件定义了如何构建镜像、安装依赖项、配置环境等。
+Docker 镜像可以通过 Docker Hub 或者私有仓库来分享和管理。当需要运行应用程序时，可以通过 Docker 引擎来创建容器，容器是基于镜像创建的运行实例，容器包含了应用程序及其依赖项，可以独立运行。容器可以通过 Dockerfile 文件或者 Docker Compose 文件来定义和配置。
+
+Docker 还提供了一些工具和服务来管理容器，例如 Docker Compose、Docker Swarm、Docker Registry 等。Docker Compose 可以用来管理多个容器的部署和运行，Docker Swarm 可以用来管理容器集群，Docker Registry 可以用来管理 Docker 镜像的存储和分享。
+
+总之，Docker 的核心原理是将应用程序及其依赖项打包成一个独立的、可移植的容器，使其能够在任何地方运行，而不需要担心环境配置和依赖项问题。
